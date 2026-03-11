@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, ShoppingCart, Menu, X, User } from "lucide-react";
 
 const navLinks = [
-  { label: "Inicio", href: "#" },
-  { label: "La Empresa", href: "#empresa" },
-  { label: "Alternadores", href: "#categorias" },
-  { label: "Arranques", href: "#categorias" },
-  { label: "Eléctricos y Otros", href: "#categorias" },
-  { label: "Equipamiento Minero", href: "#categorias" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Alternadores", href: "/categoria/alternadores" },
+  { label: "Arranques", href: "/categoria/arranques" },
+  { label: "Eléctricos y Otros", href: "/categoria/electricos-y-otros" },
+  { label: "Equipamiento Minero", href: "/categoria/equipamiento-minero" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 const Navbar = () => {
@@ -19,23 +19,23 @@ const Navbar = () => {
     <nav className="bg-nav sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-3">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <span className="font-heading text-2xl font-bold tracking-wide">
             <span className="text-primary">Encendido</span>
             <span className="text-foreground"> Total</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -84,14 +84,14 @@ const Navbar = () => {
         <div className="lg:hidden border-t border-border bg-nav">
           <div className="container mx-auto py-4 flex flex-col gap-3">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide py-1"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
