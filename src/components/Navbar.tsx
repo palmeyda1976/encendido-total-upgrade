@@ -84,14 +84,14 @@ const Navbar = () => {
         <div className="lg:hidden border-t border-border bg-nav">
           <div className="container mx-auto py-4 flex flex-col gap-3">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide py-1"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
