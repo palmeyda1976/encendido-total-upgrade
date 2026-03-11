@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import catAlternadores from "@/assets/cat-alternadores.jpg";
 import catArranques from "@/assets/cat-arranques.jpg";
 import catElectricos from "@/assets/cat-electricos.jpg";
 import catMinero from "@/assets/cat-minero.jpg";
 
 const categories = [
-  { name: "Alternadores", image: catAlternadores, desc: "Alternadores nuevos y remanufacturados" },
-  { name: "Arranques", image: catArranques, desc: "Motores de partida para todo vehículo" },
-  { name: "Eléctricos y Otros", image: catElectricos, desc: "Componentes eléctricos y accesorios" },
-  { name: "Equipamiento Minero", image: catMinero, desc: "Repuestos para maquinaria pesada" },
+  { name: "Alternadores", slug: "alternadores", image: catAlternadores, desc: "Alternadores nuevos y remanufacturados" },
+  { name: "Arranques", slug: "arranques", image: catArranques, desc: "Motores de partida para todo vehículo" },
+  { name: "Eléctricos y Otros", slug: "electricos-y-otros", image: catElectricos, desc: "Componentes eléctricos y accesorios" },
+  { name: "Equipamiento Minero", slug: "equipamiento-minero", image: catMinero, desc: "Repuestos para maquinaria pesada" },
 ];
 
 const Categories = () => {
