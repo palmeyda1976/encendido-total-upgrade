@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         heading: ["Oswald", "sans-serif"],
         body: ["Open Sans", "sans-serif"],
+        nav: ["Jost", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
