@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -44,6 +44,7 @@
 
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Open Sans', sans-serif;
+    --font-nav: 'Jost', sans-serif;
 
     --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 40 10% 92%;
