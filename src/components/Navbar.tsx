@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, ShoppingCart, Menu, X, User } from "lucide-react";
 
 const navLinks = [
-  { label: "Inicio", href: "#" },
-  { label: "La Empresa", href: "#empresa" },
-  { label: "Alternadores", href: "#categorias" },
-  { label: "Arranques", href: "#categorias" },
-  { label: "Eléctricos y Otros", href: "#categorias" },
-  { label: "Equipamiento Minero", href: "#categorias" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/" },
+  { label: "Alternadores", href: "/categoria/alternadores" },
+  { label: "Arranques", href: "/categoria/arranques" },
+  { label: "Eléctricos y Otros", href: "/categoria/electricos-y-otros" },
+  { label: "Equipamiento Minero", href: "/categoria/equipamiento-minero" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 const Navbar = () => {
