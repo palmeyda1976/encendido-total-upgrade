@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Tables } from "@/integrations/supabase/types";
 
 interface ProductCardProps {
@@ -16,7 +17,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <div className="bg-card border border-border rounded-lg overflow-hidden group hover:border-primary/50 transition-all duration-300">
-      <div className="aspect-square bg-secondary/30 overflow-hidden">
+      <Link to={`/producto/${product.slug}`} className="block aspect-square bg-secondary/30 overflow-hidden cursor-pointer">
         {product.image_url ? (
           <img
             src={product.image_url}
@@ -30,7 +31,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </svg>
           </div>
         )}
-      </div>
+      </Link>
       <div className="p-4">
         {product.brand && (
           <span className="text-xs text-primary font-semibold uppercase tracking-wider">
