@@ -25,27 +25,28 @@ const Categories = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, i) => (
-            <motion.div
-              key={cat.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="category-card h-72"
-            >
-              <img
-                src={cat.image}
-                alt={cat.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute bottom-0 left-0 right-0 z-10 p-5">
-                <h3 className="font-heading text-xl font-bold text-foreground">{cat.name}</h3>
-                <p className="text-sm text-foreground/70 mt-1">{cat.desc}</p>
-                <span className="inline-block mt-3 text-xs font-semibold text-primary uppercase tracking-wider group-hover:underline">
-                  Ver Productos →
-                </span>
-              </div>
-            </motion.div>
+            <Link to={`/categoria/${cat.slug}`} key={cat.name}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="category-card h-72 group"
+              >
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute bottom-0 left-0 right-0 z-10 p-5">
+                  <h3 className="font-heading text-xl font-bold text-foreground">{cat.name}</h3>
+                  <p className="text-sm text-foreground/70 mt-1">{cat.desc}</p>
+                  <span className="inline-block mt-3 text-xs font-semibold text-primary uppercase tracking-wider group-hover:underline">
+                    Ver Productos →
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
