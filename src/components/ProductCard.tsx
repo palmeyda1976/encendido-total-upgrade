@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Tables } from "@/integrations/supabase/types";
 
 interface ProductCardProps {
