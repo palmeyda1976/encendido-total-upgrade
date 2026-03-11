@@ -31,7 +31,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </svg>
           </div>
         )}
-      </div>
+      </Link>
       <div className="p-4">
         {product.brand && (
           <span className="text-xs text-primary font-semibold uppercase tracking-wider">
