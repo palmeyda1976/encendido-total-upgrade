@@ -19,12 +19,12 @@ const Navbar = () => {
     <nav className="bg-nav sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-3">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <span className="font-heading text-2xl font-bold tracking-wide">
             <span className="text-primary">Encendido</span>
             <span className="text-foreground"> Total</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-6">
