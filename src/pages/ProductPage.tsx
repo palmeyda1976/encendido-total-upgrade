@@ -12,6 +12,8 @@ import { useToast } from "@/hooks/use-toast";
 const ProductPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const [selectedImage, setSelectedImage] = useState(0);
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const { data: product, isLoading } = useQuery({
     queryKey: ["product", slug],
