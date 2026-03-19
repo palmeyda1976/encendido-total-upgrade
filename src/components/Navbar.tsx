@@ -4,6 +4,7 @@ import { Search, ShoppingCart, Menu, X, User } from "lucide-react";
 
 const navLinks = [
   { label: "Inicio", href: "/" },
+  { label: "La Empresa", href: "/la-empresa" },
   { label: "Alternadores", href: "/categoria/alternadores" },
   { label: "Arranques", href: "/categoria/arranques" },
   { label: "Eléctricos y Otros", href: "/categoria/electricos-y-otros" },
