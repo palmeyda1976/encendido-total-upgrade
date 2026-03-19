@@ -19,7 +19,6 @@ const Index = () => {
       <FeaturedProducts />
       <BrandsSection />
       <Newsletter />
-      <ContactSection />
       <Footer />
     </div>
   );
