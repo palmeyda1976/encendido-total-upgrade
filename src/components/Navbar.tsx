@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Eléctricos y Otros", href: "/categoria/electricos-y-otros" },
   { label: "Equipamiento Minero", href: "/categoria/equipamiento-minero" },
   { label: "Seguimiento", href: "/seguimiento" },
-  { label: "Contacto", href: "/#contacto" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 const Navbar = () => {

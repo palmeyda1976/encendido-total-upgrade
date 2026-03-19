@@ -6,7 +6,6 @@ import Categories from "@/components/Categories";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import BrandsSection from "@/components/BrandsSection";
 import Newsletter from "@/components/Newsletter";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,7 +19,6 @@ const Index = () => {
       <FeaturedProducts />
       <BrandsSection />
       <Newsletter />
-      <ContactSection />
       <Footer />
     </div>
   );
