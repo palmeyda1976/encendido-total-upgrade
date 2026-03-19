@@ -17,6 +17,7 @@ const navLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const { totalItems, setIsOpen } = useCart();
 
   return (
     <nav className="bg-nav sticky top-0 z-50 border-b border-border">
