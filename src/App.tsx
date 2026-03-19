@@ -8,6 +8,7 @@ import CategoryPage from "./pages/CategoryPage.tsx";
 import ProductPage from "./pages/ProductPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import TrackingPage from "./pages/TrackingPage.tsx";
+import LaEmpresaPage from "./pages/LaEmpresaPage.tsx";
 
 const queryClient = new QueryClient();
 
