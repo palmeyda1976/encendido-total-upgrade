@@ -54,11 +54,16 @@ const Navbar = () => {
           <button className="p-2 text-foreground/70 hover:text-primary transition-colors">
             <User className="w-5 h-5" />
           </button>
-          <button className="relative p-2 text-foreground/70 hover:text-primary transition-colors">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative p-2 text-foreground/70 hover:text-primary transition-colors"
+          >
             <ShoppingCart className="w-5 h-5" />
-            <span className="absolute -top-0.5 -right-0.5 bg-primary text-primary-foreground text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
-              0
-            </span>
+            {totalItems > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 bg-primary text-primary-foreground text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                {totalItems}
+              </span>
+            )}
           </button>
           <button
             onClick={() => setOpen(!open)}
