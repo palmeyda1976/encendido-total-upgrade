@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart, Menu, X, User } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
-import logoImg from "@/assets/logo-encendido-total.png";
+
 
 const navLinks = [
   { label: "Inicio", href: "/" },
