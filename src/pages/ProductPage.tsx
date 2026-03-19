@@ -5,7 +5,9 @@ import { supabase } from "@/integrations/supabase/client";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ChevronRight, Package, MessageCircle } from "lucide-react";
+import { ChevronRight, Package, MessageCircle, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 const ProductPage = () => {
   const { slug } = useParams<{ slug: string }>();
