@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import CategoryPage from "./pages/CategoryPage.tsx";
 import ProductPage from "./pages/ProductPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import TrackingPage from "./pages/TrackingPage.tsx";
 
 const queryClient = new QueryClient();
 
