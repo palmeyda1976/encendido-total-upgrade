@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <img src="/assets/logo-encendido-total.png" alt="Encendido Total" className="h-10 w-auto" />
+            <img src={logoImg} alt="Encendido Total" className="h-10 w-auto" />
             <p className="text-sm text-muted-foreground mt-3">
               Repuestos electromecánicos y accesorios para vehículos. Desde 1985 al servicio de Chile.
             </p>

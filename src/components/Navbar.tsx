@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-3">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src="/assets/logo-encendido-total.png" alt="Encendido Total" className="h-12 w-auto" />
+          <img src={logoImg} alt="Encendido Total" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
