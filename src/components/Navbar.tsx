@@ -24,8 +24,11 @@ const Navbar = () => {
     <nav className="bg-nav sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img src={logoImg} alt="Encendido Total" className="h-12 w-auto" />
+        <Link to="/" className="flex items-center gap-2">
+          <span className="font-heading text-2xl font-bold tracking-wide">
+            <span className="text-primary">Encendido</span>
+            <span className="text-foreground"> Total</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
