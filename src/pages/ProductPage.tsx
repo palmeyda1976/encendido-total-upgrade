@@ -191,11 +191,23 @@ const ProductPage = () => {
                 )}
 
                 <div className="border-t border-border pt-6 space-y-3">
+                  {product.in_stock && (
+                    <button
+                      onClick={() => {
+                        addItem(product);
+                        toast({ title: "Agregado al carro", description: product.name });
+                      }}
+                      className="btn-hero w-full flex items-center justify-center gap-2"
+                    >
+                      <ShoppingCart className="w-5 h-5" />
+                      Agregar al Carro
+                    </button>
+                  )}
                   <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-hero w-full flex items-center justify-center gap-2"
+                    className="w-full flex items-center justify-center gap-2 border border-border text-foreground font-heading font-semibold uppercase tracking-wider rounded-sm px-8 py-3 hover:border-primary/50 transition-colors"
                   >
                     <MessageCircle className="w-5 h-5" />
                     Consultar por WhatsApp
