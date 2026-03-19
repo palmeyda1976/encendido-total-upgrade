@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart, Menu, X, User } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import logoImg from "@/assets/logo-encendido-total.png";
 
 const navLinks = [
   { label: "Inicio", href: "/" },
@@ -23,11 +24,8 @@ const Navbar = () => {
     <nav className="bg-nav sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading text-2xl font-bold tracking-wide">
-            <span className="text-primary">Encendido</span>
-            <span className="text-foreground"> Total</span>
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logoImg} alt="Encendido Total" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
