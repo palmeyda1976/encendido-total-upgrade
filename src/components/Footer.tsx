@@ -1,5 +1,5 @@
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
-import logoImg from "@/assets/logo-encendido-total.png";
+
 
 const TikTokIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
