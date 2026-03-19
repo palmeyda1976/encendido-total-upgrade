@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
+import { ShoppingCart } from "lucide-react";
 import type { Tables } from "@/integrations/supabase/types";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 interface ProductCardProps {
   product: Tables<"products">;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const { addItem } = useCart();
+  const { toast } = useToast();
+
   const formatPrice = (price: number | null) => {
     if (!price) return "Consultar";
     return new Intl.NumberFormat("es-CL", {
@@ -13,6 +19,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
       currency: "CLP",
       minimumFractionDigits: 0,
     }).format(price);
+  };
+
+  const handleAdd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addItem(product);
+    toast({ title: "Agregado al carro", description: product.name });
   };
 
   return (
@@ -58,6 +71,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
             {product.in_stock ? "En Stock" : "Agotado"}
           </span>
         </div>
+        {product.in_stock && (
+          <button
+            onClick={handleAdd}
+            className="mt-3 w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground font-heading font-semibold text-sm py-2 rounded-sm hover:bg-primary/90 transition-colors"
+          >
+            <ShoppingCart className="w-4 h-4" />
+            Agregar al Carro
+          </button>
+        )}
       </div>
     </div>
   );

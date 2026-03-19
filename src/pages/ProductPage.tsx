@@ -5,11 +5,15 @@ import { supabase } from "@/integrations/supabase/client";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ChevronRight, Package, MessageCircle } from "lucide-react";
+import { ChevronRight, Package, MessageCircle, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 const ProductPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const [selectedImage, setSelectedImage] = useState(0);
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const { data: product, isLoading } = useQuery({
     queryKey: ["product", slug],
@@ -187,11 +191,23 @@ const ProductPage = () => {
                 )}
 
                 <div className="border-t border-border pt-6 space-y-3">
+                  {product.in_stock && (
+                    <button
+                      onClick={() => {
+                        addItem(product);
+                        toast({ title: "Agregado al carro", description: product.name });
+                      }}
+                      className="btn-hero w-full flex items-center justify-center gap-2"
+                    >
+                      <ShoppingCart className="w-5 h-5" />
+                      Agregar al Carro
+                    </button>
+                  )}
                   <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-hero w-full flex items-center justify-center gap-2"
+                    className="w-full flex items-center justify-center gap-2 border border-border text-foreground font-heading font-semibold uppercase tracking-wider rounded-sm px-8 py-3 hover:border-primary/50 transition-colors"
                   >
                     <MessageCircle className="w-5 h-5" />
                     Consultar por WhatsApp
