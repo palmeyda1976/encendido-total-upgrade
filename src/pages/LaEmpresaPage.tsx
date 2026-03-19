@@ -14,6 +14,14 @@ const LaEmpresaPage = () => {
             La Empresa
           </h1>
 
+          <div className="rounded-lg overflow-hidden mb-10">
+            <img
+              src="https://www.encendidototal.cl/sitio-web-pyme/wp-content/uploads/2021/03/encendido-total-fachada-1920x695-tinified-1024x371.jpg"
+              alt="Fachada Encendido Total"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
           <div className="space-y-6 text-foreground/90 text-base leading-relaxed">
             <p>
               Repuestos Automotrices Ltda. nace en 1985, empresa chilena, con más de 30 años en el mercado dedicada a importar y comercializar un amplio y variado stock en motores de arranque, alternadores y sus componentes, además de toda la gama de repuestos eléctricos; ampolletas, cables, balizas, faroles, baterías, instrumentos, relays, interruptores, flashers, etc.
