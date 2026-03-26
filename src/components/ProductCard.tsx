@@ -4,6 +4,25 @@ import type { Tables } from "@/integrations/supabase/types";
 import { useCart } from "@/contexts/CartContext";
 import { useToast } from "@/hooks/use-toast";
 
+import prodAlternador from "@/assets/prod-alternador-1.jpg";
+import prodArranque from "@/assets/prod-arranque-1.jpg";
+import prodElectrico from "@/assets/prod-electrico-1.jpg";
+import prodMinero1 from "@/assets/prod-minero-1.jpg";
+import prodMinero2 from "@/assets/prod-minero-2.jpg";
+
+const imageMap: Record<string, string> = {
+  "/products/alternador-1.jpg": prodAlternador,
+  "/products/arranque-1.jpg": prodArranque,
+  "/products/electrico-1.jpg": prodElectrico,
+  "/products/minero-1.jpg": prodMinero1,
+  "/products/minero-2.jpg": prodMinero2,
+};
+
+const resolveImage = (url: string | null): string | null => {
+  if (!url) return null;
+  return imageMap[url] ?? url;
+};
+
 interface ProductCardProps {
   product: Tables<"products">;
 }
@@ -31,9 +50,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div className="bg-white border border-border rounded-lg overflow-hidden group hover:border-primary/50 transition-all duration-300">
       <Link to={`/producto/${product.slug}`} className="block aspect-square bg-white overflow-hidden cursor-pointer">
-        {product.image_url ? (
+        {resolveImage(product.image_url) ? (
           <img
-            src={product.image_url}
+            src={resolveImage(product.image_url)!}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
