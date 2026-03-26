@@ -27,7 +27,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 bg-card border-y border-border">
+    <section className="py-16 bg-background border-y border-border">
       <div className="container mx-auto">
         <div className="max-w-2xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-6">
