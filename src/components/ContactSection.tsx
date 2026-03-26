@@ -54,11 +54,11 @@ const ContactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-card border border-border rounded-lg p-6 text-center hover:border-primary/50 transition-all group"
+              className="bg-white border border-gray-200 rounded-lg p-6 text-center hover:border-primary/50 transition-all group"
             >
               <c.icon className="w-10 h-10 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <p className="font-heading font-semibold text-foreground">{c.label}</p>
-              <p className="text-sm text-muted-foreground mt-1">{c.value}</p>
+              <p className="font-heading font-semibold text-gray-900">{c.label}</p>
+              <p className="text-sm text-gray-600 mt-1">{c.value}</p>
             </motion.a>
           ))}
 
@@ -67,11 +67,11 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="bg-card border border-border rounded-lg p-6 text-center"
+            className="bg-white border border-gray-200 rounded-lg p-6 text-center"
           >
             <Clock className="w-10 h-10 text-primary mx-auto mb-3" />
-            <p className="font-heading font-semibold text-foreground">Horario</p>
-            <p className="text-sm text-muted-foreground mt-1">Lun-Vie: 8:30 - 17:00</p>
+            <p className="font-heading font-semibold text-gray-900">Horario</p>
+            <p className="text-sm text-gray-600 mt-1">Lun-Vie: 8:30 - 17:00</p>
           </motion.div>
         </div>
 
@@ -82,56 +82,56 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-card border border-border rounded-lg p-8"
+            className="bg-white border border-gray-200 rounded-lg p-8"
           >
-            <h3 className="font-heading text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <h3 className="font-heading text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
               <Mail className="w-6 h-6 text-primary" />
               Envíanos un Mensaje
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">Nombre *</label>
+                <label className="text-sm font-medium text-gray-900 mb-1 block">Nombre *</label>
                 <Input
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="Tu nombre"
                   maxLength={100}
-                  className="bg-background border-border"
+                   className="bg-gray-50 border-gray-300 text-gray-900"
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-1 block">Email *</label>
+                  <label className="text-sm font-medium text-gray-900 mb-1 block">Email *</label>
                   <Input
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="tu@email.com"
                     maxLength={255}
-                    className="bg-background border-border"
+                    className="bg-gray-50 border-gray-300 text-gray-900"
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-1 block">Teléfono</label>
+                  <label className="text-sm font-medium text-gray-900 mb-1 block">Teléfono</label>
                   <Input
                     type="tel"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     placeholder="+56 9 ..."
                     maxLength={20}
-                    className="bg-background border-border"
+                    className="bg-gray-50 border-gray-300 text-gray-900"
                   />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1 block">Mensaje *</label>
+                <label className="text-sm font-medium text-gray-900 mb-1 block">Mensaje *</label>
                 <Textarea
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="¿En qué podemos ayudarte?"
                   rows={4}
                   maxLength={1000}
-                  className="bg-background border-border resize-none"
+                  className="bg-gray-50 border-gray-300 text-gray-900 resize-none"
                 />
               </div>
               <Button type="submit" disabled={sending} className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
@@ -148,9 +148,9 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-heading text-xl font-bold text-foreground mb-4">Información de la Empresa</h3>
-              <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="font-heading text-xl font-bold text-gray-900 mb-4">Información de la Empresa</h3>
+              <div className="space-y-3 text-sm text-gray-600">
                 <p className="flex items-start gap-2">
                   <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <a href="mailto:ventas@encendidototal.cl" className="hover:text-primary transition-colors">ventas@encendidototal.cl</a>
@@ -163,12 +163,12 @@ const ContactSection = () => {
             </div>
 
             {/* Santiago */}
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <div className="p-4 flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-heading font-semibold text-foreground">Casa Matriz Santiago</p>
-                  <p className="text-sm text-muted-foreground">Matucana 20, Estación Central, Región Metropolitana</p>
+                  <p className="font-heading font-semibold text-gray-900">Casa Matriz Santiago</p>
+                  <p className="text-sm text-gray-600">Matucana 20, Estación Central, Región Metropolitana</p>
                 </div>
               </div>
               <iframe
@@ -185,12 +185,12 @@ const ContactSection = () => {
             </div>
 
             {/* Rancagua */}
-            <div className="bg-card border border-border rounded-lg overflow-hidden">
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <div className="p-4 flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-heading font-semibold text-foreground">Sucursal Rancagua</p>
-                  <p className="text-sm text-muted-foreground">Lastarria 512, Región de O'Higgins</p>
+                  <p className="font-heading font-semibold text-gray-900">Sucursal Rancagua</p>
+                  <p className="text-sm text-gray-600">Lastarria 512, Región de O'Higgins</p>
                 </div>
               </div>
               <iframe
