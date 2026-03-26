@@ -5,7 +5,7 @@ const brands = [
 
 const BrandsSection = () => {
   return (
-    <section className="py-12 bg-card border-y border-border">
+    <section className="py-12 bg-background border-y border-border">
       <div className="container mx-auto">
         <h2 className="font-heading text-2xl font-bold text-center mb-8">
           Marcas que <span className="text-primary">Trabajamos</span>
