@@ -230,43 +230,73 @@ const CategoryPage = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Content with sidebar */}
       <section className="pb-16">
-        <div className="container mx-auto">
-          {isLoading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="bg-card border border-border rounded-lg overflow-hidden animate-pulse">
-                  <div className="aspect-square bg-secondary/50" />
-                  <div className="p-4 space-y-3">
-                    <div className="h-3 bg-secondary/50 rounded w-1/3" />
-                    <div className="h-4 bg-secondary/50 rounded w-2/3" />
-                    <div className="h-5 bg-secondary/50 rounded w-1/4" />
+        <div className="container mx-auto flex gap-8">
+          {/* Categories Sidebar */}
+          <aside className="hidden lg:block w-64 shrink-0">
+            <div className="sticky top-20 border border-border rounded-lg overflow-hidden">
+              <div className="bg-primary px-4 py-3 flex items-center gap-2">
+                <FolderOpen className="w-4 h-4 text-primary-foreground" />
+                <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-primary-foreground">
+                  Categorías
+                </h3>
+              </div>
+              <nav className="py-2">
+                {allCategories?.map((cat) => (
+                  <Link
+                    key={cat.id}
+                    to={`/categoria/${cat.slug}`}
+                    className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
+                      cat.slug === slug
+                        ? "bg-primary/10 text-primary border-l-2 border-primary"
+                        : "text-foreground/70 hover:bg-muted hover:text-foreground"
+                    }`}
+                  >
+                    {cat.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </aside>
+
+          {/* Products Grid */}
+          <div className="flex-1 min-w-0">
+            {isLoading ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div key={i} className="bg-card border border-border rounded-lg overflow-hidden animate-pulse">
+                    <div className="aspect-square bg-secondary/50" />
+                    <div className="p-4 space-y-3">
+                      <div className="h-3 bg-secondary/50 rounded w-1/3" />
+                      <div className="h-4 bg-secondary/50 rounded w-2/3" />
+                      <div className="h-5 bg-secondary/50 rounded w-1/4" />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          ) : filteredAndSorted.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {filteredAndSorted.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">
-                {products && products.length > 0
-                  ? "No se encontraron productos con los filtros seleccionados."
-                  : "Aún no hay productos en esta categoría."}
-              </p>
-              {activeFilterCount > 0 && (
-                <button onClick={clearFilters} className="mt-4 text-primary hover:underline text-sm font-medium">
-                  Limpiar filtros
-                </button>
-              )}
-              <Link to="/" className="inline-block mt-6 btn-hero">Volver al Inicio</Link>
-            </div>
-          )}
+                ))}
+              </div>
+            ) : filteredAndSorted.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredAndSorted.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-20">
+                <p className="text-muted-foreground text-lg">
+                  {products && products.length > 0
+                    ? "No se encontraron productos con los filtros seleccionados."
+                    : "Aún no hay productos en esta categoría."}
+                </p>
+                {activeFilterCount > 0 && (
+                  <button onClick={clearFilters} className="mt-4 text-primary hover:underline text-sm font-medium">
+                    Limpiar filtros
+                  </button>
+                )}
+                <Link to="/" className="inline-block mt-6 btn-hero">Volver al Inicio</Link>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
