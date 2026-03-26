@@ -6,6 +6,10 @@ import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import { ChevronRight, SlidersHorizontal, X, FolderOpen } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ProductCard from "@/components/ProductCard";
 import { ChevronRight, SlidersHorizontal, X } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +23,18 @@ const CategoryPage = () => {
   const [brandFilter, setBrandFilter] = useState<string>("all");
   const [stockFilter, setStockFilter] = useState<StockFilter>("all");
   const [showFilters, setShowFilters] = useState(false);
+
+  const { data: allCategories } = useQuery({
+    queryKey: ["all-categories"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("categories")
+        .select("*")
+        .order("name");
+      if (error) throw error;
+      return data;
+    },
+  });
 
   const { data: category, isLoading: catLoading } = useQuery({
     queryKey: ["category", slug],
