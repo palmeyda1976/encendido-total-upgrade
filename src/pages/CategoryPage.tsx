@@ -235,19 +235,17 @@ const CategoryPage = () => {
         <div className="container mx-auto flex gap-8">
           {/* Categories Sidebar */}
           <aside className="hidden lg:block w-64 shrink-0">
-            <div className="sticky top-20 border border-border rounded-lg overflow-hidden">
-              <div className="bg-primary px-4 py-3 flex items-center gap-2">
-                <FolderOpen className="w-4 h-4 text-primary-foreground" />
-                <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-primary-foreground">
-                  Categorías
-                </h3>
-              </div>
-              <nav className="py-2">
+            <div className="sticky top-20">
+              <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-foreground mb-3 flex items-center gap-2">
+                <FolderOpen className="w-4 h-4 text-primary" />
+                Categorías
+              </h3>
+              <nav className="space-y-1">
                 {allCategories?.map((cat) => (
                   <Link
                     key={cat.id}
                     to={`/categoria/${cat.slug}`}
-                    className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
+                    className={`block px-3 py-2 text-sm font-medium rounded-sm transition-colors ${
                       cat.slug === slug
                         ? "bg-primary/10 text-primary border-l-2 border-primary"
                         : "text-foreground/70 hover:bg-muted hover:text-foreground"
