@@ -37,7 +37,7 @@ const Navbar = () => {
             <Link
               key={link.label}
               to={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide font-nav"
+              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors uppercase tracking-wide font-nav"
             >
               {link.label}
             </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 to={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide font-nav py-1"
+                className="text-sm font-medium text-primary hover:text-primary/80 transition-colors uppercase tracking-wide font-nav py-1"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
