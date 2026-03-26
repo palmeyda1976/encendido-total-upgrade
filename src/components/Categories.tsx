@@ -39,8 +39,8 @@ const Categories = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute bottom-0 left-0 right-0 z-10 p-5" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
-                  <h3 className="font-heading text-xl font-bold text-foreground">{cat.name}</h3>
-                  <p className="text-sm text-foreground/70 mt-1">{cat.desc}</p>
+                  <h3 className="font-heading text-xl font-bold text-white">{cat.name}</h3>
+                  <p className="text-sm text-white/90 mt-1">{cat.desc}</p>
                   <span className="inline-block mt-3 text-xs font-semibold text-primary uppercase tracking-wider group-hover:underline">
                     Ver Productos →
                   </span>
